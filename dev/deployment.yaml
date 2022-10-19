@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-server-deployment
+  namespace: demo
+  labels:
+    app: demo-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-server
+  template:
+    metadata:
+      labels:
+        app: demo-server
+    spec:
+      containers:
+        - name: demo-server
+          image: bogdanvlas2000/demo-server:v1
+          ports:
+            - containerPort:  8081
+              name: demo-svc
