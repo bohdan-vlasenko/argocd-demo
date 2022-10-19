@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: demo-server
-          image: bogdanvlas2000/demo-server:v2
+          image: bogdanvlas2000/demo-server:v1
           ports:
             - containerPort:  8081
               name: demo-svc
